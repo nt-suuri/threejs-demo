@@ -38,9 +38,9 @@ const Landing = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-slate-400 dark:bg-black">
       {width && width < 700 ? (
-        <div className="absolute h-3/2">
+        <div className="absolute h-2/3">
           <h1
             className={`text-4xl small-text text-white top-24 mt-12 mx-10 relative font-bold z-30`}
           >
@@ -67,7 +67,7 @@ const Landing = () => {
           </animated.div>
         </div>
       ) : (
-        <div className="absolute h-2/3">
+        <div className="absolute h-1/3">
           <h1
             className={`text-8xl text-white top-2/3 left-1/4 lg:left-64 w-96 relative font-bold z-30`}
           >
