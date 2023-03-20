@@ -1,3 +1,4 @@
+import * as THREE from "three";
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
