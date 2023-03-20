@@ -5,7 +5,7 @@ import { DivInview } from "./animations/DivInview";
 
 const Intro = () => {
   return (
-    <div className="h-screen w-screen bg-black p-5">
+    <div className="h-screen w-screen bg-zinc-600 dark:bg-black p-5">
       <DivInview>
         {/* todo: spark storm animation (infinite). see more: https://varun.ca/three-js-particles/ */}
         <div className="w-full flex items-center justify-center">

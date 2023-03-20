@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     setIsSSR(true);
   }, []);
   return (
-    <div className="h-screen bg-teal font-lato select-none">
+    <div className="h-screen bg-teal font-lato select-none ">
       <Head>
         <title>Demo</title>
         <meta name="description" content="Demo " />
@@ -38,15 +38,12 @@ const Home: NextPage = () => {
       <div className="overflow-x-hidden">
         <Intro />
       </div>
-
       <Section>
-        <div className="relative w-full h-full bg-black">
-          <Landing />
-          <Scene />
-        </div>
+        <Landing />
+        <Scene />
       </Section>
       <Section>
-        <div className="bg-black h-full">{isSSR && <SparkScene />}</div>
+        <div className="bg-slate-300 dark:bg-gray-900 h-full">{isSSR && <SparkScene />}</div>
       </Section>
     </div>
   );
