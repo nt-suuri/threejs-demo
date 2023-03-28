@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { PlayIcon, ForwardIcon, PauseIcon, NextIcon } from "../../../../assets/svg";
 import Box from "../../../3d/Models/Box";
 import { DivInview } from "../../../Animations/DivInView";
+import Particle from "../Particle";
 
 const Intro = () => {
   return (
@@ -9,11 +10,8 @@ const Intro = () => {
       <DivInview>
         {/* todo: spark storm animation (infinite). see more: https://varun.ca/three-js-particles/ */}
         <div className="w-full flex items-center justify-center">
-          <div className="h-64 w-64 md:h-96 md:w-96 mt-5">
-            <Canvas>
-              <ambientLight />
-              <Box position={[0, 0, 0]} />
-            </Canvas>
+          <div className="mt-5">
+            <Particle />
           </div>
         </div>
         {/* todo: fix font family, improve readability if possible */}

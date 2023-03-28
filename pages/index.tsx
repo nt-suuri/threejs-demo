@@ -15,6 +15,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { MeshLine, MeshLineMaterial } from "../utils/MeshLine";
 import { preloadFonts } from "../utils/TypoScene/utils";
 import { TypeShuffle } from "../utils/TypoScene/typeShuffle";
+import NextParticle from "../components/Pages/Home/Particle";
 
 extend({ MeshLine, MeshLineMaterial, OrbitControls });
 
@@ -25,30 +26,32 @@ const SparkScene = dynamic(() => import("../utils/SparkScene/SparkScene"), {
 
 const Home: NextPage = () => {
   const [isSSR, setIsSSR] = useState<boolean>(false);
-  useEffect(() => {
-    preloadFonts('biu0hfr').then(() => {
-      document.body.classList.remove('loading');
+  // useEffect(() => {
+  //   preloadFonts('biu0hfr').then(() => {
+  //     document.body.classList.remove('loading');
 
-      const textElement = document.querySelector('.content');
+  //     const textElement = document.querySelector('.content');
 
-      const ts = new TypeShuffle(textElement!);
-      ts.trigger('fx5');
-    });
-    setIsSSR(true);
+  //     const ts = new TypeShuffle(textElement!);
+  //     ts.trigger('fx5');
+  //   });
+  //   setIsSSR(true);
 
-  }, []);
+  // }, []);
+
+  const alignCenter = { display: 'flex', alignItems: 'center' }
   return (
     <div className="h-screen bg-teal font-lato select-none ">
       <Head>
-        <title>Demo</title>
+        <title>NT Demo</title>
         <meta name="description" content="Demo " />
       </Head>
       <Navbar />
       <div className="overflow-x-hidden">
+        {/* <NextParticle /> */}
         <Intro />
       </div>
       <Section>
-        <Landing />
         <Scene />
       </Section>
       <Section>
