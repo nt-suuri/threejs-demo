@@ -28,14 +28,15 @@ const motionForce = (x: number, y: number): ParticleForce => {
   return forces.disturbance(x, y, 5);
 };
 
+
 export default function LogoParticles() {
   const { height, width } = useWindowDimensions();
 
   return (
     <ParticleImage
       src={"/logo.png"}
-      width={Number(width)}
-      height={Number(height)}
+      width={Number(width ?? 800)}
+      height={Number(height ?? 600)}
       scale={1}
       maxParticles={1200}
       particleOptions={particleOptions}

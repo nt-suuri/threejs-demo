@@ -15,7 +15,6 @@ const ToggleThemeButton = () => {
   }, []);
 
   useEffect(() => {
-
     if (darkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -26,27 +25,24 @@ const ToggleThemeButton = () => {
   }, [darkMode]);
 
   return (
-    <label className="absolute top-6 right-6 h-6 w-6 md:top-10 md:right-">
+    <label
+      className="fixed bottom-4 right-4 z-10 flex items-center justify-center w-12 h-12 rounded-full cursor-pointer bg-gray-200 dark:bg-gray-800"
+    >
       <input
         type="checkbox"
-        className="absolute top-0 left-0 h-full w-full cursor-pointer opacity-0"
+        className="sr-only"
         checked={darkMode}
         aria-label="Dark mode"
         onChange={() => setDarkMode(!darkMode)}
       />
-
       {darkMode ? (
-        <FaSun
-          className="h-6 w-6 text-custom-gray"
+        <FaSun className="w-6 h-6 text-gray-800 dark:text-yellow-500"
           aria-hidden="true"
-          focusable="false"
-        />
+          focusable="false" />
       ) : (
-        <FaMoon
-          className="h-6 w-6 text-custom-gray"
+        <FaMoon className="w-6 h-6 text-gray-800 dark:text-gray-200"
           aria-hidden="true"
-          focusable="false"
-        />
+          focusable="false" />
       )}
     </label>
   );
