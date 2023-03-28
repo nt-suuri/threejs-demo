@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { PlayIcon, ForwardIcon, PauseIcon, NextIcon } from "../assets/svg";
-import Box from "./3d/Box";
-import { DivInview } from "./animations/DivInview";
+import { PlayIcon, ForwardIcon, PauseIcon, NextIcon } from "../../../../assets/svg";
+import Box from "../../../3d/Models/Box";
+import { DivInview } from "../../../Animations/DivInView";
 
 const Intro = () => {
   return (

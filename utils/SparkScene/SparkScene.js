@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
 import { SparkStorm } from "./SparkStorm";
 import Typewriter from "typewriter-effect";
-import useWindowDimensions from "../hooks/useWindowDimensions";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useSpring, animated } from "react-spring";
 
 

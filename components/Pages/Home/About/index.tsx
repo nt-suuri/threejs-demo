@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 import Typewriter from "typewriter-effect";
-import useWindowDimensions from "../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 import { useSpring, animated } from "react-spring";
-import { DivInview } from "./animations/DivInview";
+import { DivInview } from "../../../Animations/DivInView";
 
 const Landing = () => {
   const { height, width } = useWindowDimensions();
