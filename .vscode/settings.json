@@ -1,0 +1,12 @@
+{
+  "eslint.workingDirectories": [
+    "./src"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "phinf",
+    "pstatic",
+    "shiba"
+  ]
+}
