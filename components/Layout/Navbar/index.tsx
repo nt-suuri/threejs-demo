@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react";
 
 import Link from 'next/link';
 import Hamburger from 'hamburger-react';
@@ -13,30 +13,43 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
   const [active, setActive] = useState(false);
   const { height, width } = useWindowDimensions();
   const triggerRef = useRef(null);
-  const dataRef = useIntersectionObserver(triggerRef, { freezeOnceVisible: false });
+  const dataRef = useIntersectionObserver(triggerRef, {
+    freezeOnceVisible: false,
+  });
   const triggerRefScroll = useRef(null);
-  const dataRefScroll = useIntersectionObserver(triggerRefScroll, { freezeOnceVisible: false });
+  const dataRefScroll = useIntersectionObserver(triggerRefScroll, {
+    freezeOnceVisible: false,
+  });
 
   const defaultAnimatedProps = useSpring({
     from: { opacity: 0, top: -400 },
-    to: { opacity: dataRef?.isIntersecting ? 1 : 0, top: dataRef?.isIntersecting ? 0 : -400 },
-    config: { mass: 1, tension: 150, friction: 15 }
+    to: {
+      opacity: dataRef?.isIntersecting ? 1 : 0,
+      top: dataRef?.isIntersecting ? 0 : -400,
+    },
+    config: { mass: 1, tension: 150, friction: 15 },
   });
 
   const scrollAnimatedProps = useSpring({
     from: { opacity: 0, top: -400 },
-    to: { opacity: dataRefScroll?.isIntersecting ? 1 : 0, top: dataRefScroll?.isIntersecting ? 0 : -400 },
-    config: { mass: 1, tension: 150, friction: 15 }
+    to: {
+      opacity: dataRefScroll?.isIntersecting ? 1 : 0,
+      top: dataRefScroll?.isIntersecting ? 0 : -400,
+    },
+    config: { mass: 1, tension: 150, friction: 15 },
   });
 
   const animatedProps = useSpring({
     from: { opacity: 0, marginTop: -500 },
-    to: { opacity: active || (width && width >= 1024) ? 1 : 0, marginTop: active || (width && width >= 1024) ? 0 : -300 },
-    config: { mass: 1, tension: 150, friction: 10 }
+    to: {
+      opacity: active || (width && width >= 1024) ? 1 : 0,
+      marginTop: active || (width && width >= 1024) ? 0 : -300,
+    },
+    config: { mass: 1, tension: 150, friction: 10 },
   });
 
   const navbar = (position: string) => (
-    <>
+    <div>
       <animated.div style={(position == 'absolute') ? defaultAnimatedProps : scrollAnimatedProps} className={(position == 'absolute') ? 'absolute z-50 w-full top-0' : 'z-50 w-full top-0 fixed'}>
         <nav className='flex items-center flex-wrap p-3 mr-6'>
           <Link href='/'>
@@ -78,17 +91,13 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
       </animated.div>
       <div className='absolute top-10' ref={triggerRef} />
       <div className='absolute max-top' ref={triggerRefScroll} />
-    </>
+    </div>
   );
 
   return (
     <>
-      <div>
-        {navbar("absolute")}
-      </div>
-      <div>
-        {navbar("fixed")}
-      </div>
+      <div>{navbar("absolute")}</div>
+      <div>{navbar("fixed")}</div>
     </>
   );
 };

@@ -1,29 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Navbar from '../components/Layout/Navbar';
-import Scene from '../components/3d/Models/Torus';
-import Landing from '../components/Pages/Home/About';
-import { useEffect, useState } from 'react';
-import Intro from '../components/Pages/Home/Intro';
-import { Section } from "../components/Layout/Section";
-import ToggleThemeButton from "../components/Layout/ToggleThemeButton"
-
-
-import dynamic from "next/dynamic";
+import { Navbar, Section } from "../components/Layout";
+import Scene from "../components/3d/Models/Torus";
+import Landing from "../components/Pages/Home/About";
+import Intro from "../components/Pages/Home/Intro";
+import ToggleThemeButton from "../components/Layout/ToggleThemeButton";
 
 import { extend } from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { MeshLine, MeshLineMaterial } from "../utils/MeshLine";
+import Process from "../components/Pages/Home/Process";
 import { preloadFonts } from "../utils/TypoScene/utils";
 import { TypeShuffle } from "../utils/TypoScene/typeShuffle";
+import { useEffect, useState } from "react";
 
 extend({ MeshLine, MeshLineMaterial, OrbitControls });
-
-const SparkScene = dynamic(() => import("../utils/SparkScene/SparkScene"), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
 
 const Home: NextPage = () => {
   const [isSSR, setIsSSR] = useState<boolean>(false);
@@ -40,21 +32,22 @@ const Home: NextPage = () => {
 
   }, []);
   return (
-    <div className="h-screen bg-teal font-lato select-none ">
+    <div className="h-screen bg-teal font-lato select-none">
       <Head>
         <title>Nasha Tech LLC</title>
         <meta name="description" content="Demo " />
       </Head>
       <Navbar />
-      <div className="overflow-x-hidden">
+      <Section bg="bg-zinc-200">
         <Intro />
-      </div>
+      </Section>
       <Section>
         <Landing />
         <Scene />
       </Section>
-      <Section>
-        <div className="bg-slate-300 dark:bg-gray-900 h-full">{isSSR && <SparkScene />}</div>
+
+      <Section bg="bg-black">
+        <Process />
       </Section>
       <ToggleThemeButton />
     </div>

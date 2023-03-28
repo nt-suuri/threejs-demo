@@ -1,9 +1,28 @@
 import { PropsWithChildren } from "react";
 
-export const Section = ({ children, ...props }: PropsWithChildren) => {
+import Container from "../Container";
+
+export type CustomPropsWithChildren = PropsWithChildren & {
+  bg?: string;
+};
+
+// TODO: change default colors
+const Section = ({ children, ...props }: CustomPropsWithChildren) => {
+  const { bg, ...rest } = props;
   return (
-    <div className="w-full overflow-x-hidden bg-orange-200 dark:bg-black" {...props}>
-      <div className="h-screen w-screen">{children}</div>
-    </div>
+    <section
+      className={`w-full overflow-x-hidden dark:bg-black ${
+        bg ? bg : "bg-secondary-orange"
+      }`}
+      {...rest}
+    >
+      <div className="h-screen w-screen">
+        <div className="w-full flex items-center justify-center">
+          <Container>{children}</Container>
+        </div>
+      </div>
+    </section>
   );
 };
+
+export default Section;
