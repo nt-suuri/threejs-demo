@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import useWindowDimensions from "../hooks/useWindowDimensions";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const getRandomInt = (max: number) => {
   return Math.floor(Math.random() * max);

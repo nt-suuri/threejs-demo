@@ -3,10 +3,10 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Hamburger from 'hamburger-react';
 import { useSpring, animated } from 'react-spring';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import ToggleThemeButton from './ToggleThemeButton';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import ToggleThemeButton from '../ToggleThemeButton';
 
 const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
   const [active, setActive] = useState(false);

@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Navbar from '../components/Navbar';
-import Scene from '../components/Scene';
-import Landing from '../components/Landing';
+import Navbar from '../components/Layout/Navbar';
+import Scene from '../components/3d/Models/Torus';
+import Landing from '../components/Pages/Home/About';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { useEffect, useState } from 'react';
-import Intro from '../components/Intro';
-import ToggleThemeButton from '../components/ToggleThemeButton';
-import { Section } from "../components/layouts/Section";
+import Intro from '../components/Pages/Home/Intro';
+import ToggleThemeButton from '../components/Layout/ToggleThemeButton';
+import { Section } from "../components/Layout/Section";
 
 import dynamic from "next/dynamic";
 
@@ -18,7 +18,7 @@ import { MeshLine, MeshLineMaterial } from "../utils/MeshLine";
 
 extend({ MeshLine, MeshLineMaterial, OrbitControls });
 
-const SparkScene = dynamic(() => import("../components/SparkScene"), {
+const SparkScene = dynamic(() => import("../utils/SparkScene/SparkScene"), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });

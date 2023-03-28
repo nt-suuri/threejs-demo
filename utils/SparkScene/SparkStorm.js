@@ -12,7 +12,7 @@ import {
   dequanAttractor,
   lorenzAttractor,
   lorenzMod2Attractor,
-} from "../utils/attractor";
+} from "./attractor"
 
 const simulation = () =>
   Random.pick([
