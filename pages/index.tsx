@@ -7,6 +7,8 @@ import Landing from '../components/Pages/Home/About';
 import { useEffect, useState } from 'react';
 import Intro from '../components/Pages/Home/Intro';
 import { Section } from "../components/Layout/Section";
+import ToggleThemeButton from "../components/Layout/ToggleThemeButton"
+
 
 import dynamic from "next/dynamic";
 
@@ -40,7 +42,7 @@ const Home: NextPage = () => {
   return (
     <div className="h-screen bg-teal font-lato select-none ">
       <Head>
-        <title>Demo</title>
+        <title>Nasha Tech LLC</title>
         <meta name="description" content="Demo " />
       </Head>
       <Navbar />
@@ -54,6 +56,7 @@ const Home: NextPage = () => {
       <Section>
         <div className="bg-slate-300 dark:bg-gray-900 h-full">{isSSR && <SparkScene />}</div>
       </Section>
+      <ToggleThemeButton />
     </div>
   );
 };

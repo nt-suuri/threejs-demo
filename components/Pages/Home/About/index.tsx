@@ -5,6 +5,7 @@ import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 import { useSpring, animated } from "react-spring";
 import { DivInview } from "../../../Animations/DivInView";
 
+
 const Landing = () => {
   const { height, width } = useWindowDimensions();
 
@@ -15,12 +16,16 @@ const Landing = () => {
     from: { opacity: 0 },
     to: { opacity: showText ? 1 : 0 },
     config: { duration: 1000 },
+    fontFamily: 'Venera',
+
   });
 
   const arrowFadeStyles = useSpring({
     from: { opacity: 0 },
     to: { opacity: showArrow ? 1 : 0 },
     config: { duration: 500 },
+    fontFamily: 'Venera',
+
   });
 
   useEffect(() => {
@@ -43,6 +48,7 @@ const Landing = () => {
         <div className="absolute h-2/3">
           <h1
             className={`text-4xl small-text text-white top-24 mt-12 mx-10 relative font-bold z-30`}
+            style={{ fontFamily: "Venera" }}
           >
             <div className="tall-lines">
               <Typewriter
@@ -59,7 +65,7 @@ const Landing = () => {
             style={fadeStyles}
             className="top-28 left-10 relative z-30 w-3/4 text"
           >
-            <h1 className="text-xl text-white tall-lines">
+            <h1 className="text-xl text-white tall-lines" style={{ fontFamily: "Venera" }}>
               By taking advantage of the flexibility, and fast adaptability of
               nomads we can master advanced technology first to aid our business
               while maintaining close contact with our customers

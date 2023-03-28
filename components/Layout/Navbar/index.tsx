@@ -2,11 +2,12 @@ import { useState, useRef } from 'react';
 
 import Link from 'next/link';
 import Hamburger from 'hamburger-react';
+import Image from 'next/image'
 import { useSpring, animated } from 'react-spring';
 import useIntersectionObserver from '../../../hooks/useIntersectionObserver';
 
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
-import ToggleThemeButton from '../ToggleThemeButton';
+
 
 const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
   const [active, setActive] = useState(false);
@@ -40,7 +41,12 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
         <nav className='flex items-center flex-wrap p-3 mr-6'>
           <Link href='/'>
             <a className='inline-flex items-center m-5 p-1 bg-teal backdrop-blur-sm bg-opacity-20 rounded-xl'>
-              Logo is here
+              <Image
+                src="/assets/pictures/nt_logo.svg"
+                alt="Logo"
+                width={100}
+                height={100}
+              />
             </a>
           </Link>
           <div className='z-40 inline-flex m-2 mt-1 mr-0 p-1 lg:hidden ml-auto outline-none bg-teal backdrop-blur-sm bg-opacity-20 rounded-xl'>
@@ -64,8 +70,6 @@ const Navbar = ({ isFixed }: { isFixed?: boolean }) => {
                     Mission
                   </a>
                 </Link>
-                <ToggleThemeButton />
-
               </div>
 
             </animated.div>
