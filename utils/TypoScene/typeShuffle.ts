@@ -1,6 +1,7 @@
+//@ts-nocheck 
 import 'splitting/dist/splitting.css';
 import 'splitting/dist/splitting-cells.css';
-import Splitting from 'splitting';
+// import Splitting from 'splitting';
 import { randomNumber } from './utils';
 
 /**
@@ -98,6 +99,9 @@ export class TypeShuffle {
     constructor(DOM_el) {
         this.DOM.el = DOM_el;
         // Apply Splitting (two times to have lines, words and chars)
+
+        const Splitting = require('splitting');
+
         const results = Splitting({
             target: this.DOM.el,
             by: 'lines'
