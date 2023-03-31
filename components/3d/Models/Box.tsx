@@ -17,8 +17,8 @@ export default function Box(props: ThreeElements['mesh']) {
       onClick={(event) => setActive(!active)}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
-      <sphereGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial wireframe color={hovered ? 'hotpink' : '#949494'} />
+      <dodecahedronGeometry args={[2, 2]} />
+      <meshStandardMaterial wireframe color={hovered ? '#FFA727' : '#FF6900'} />
     </mesh>
   )
 }
