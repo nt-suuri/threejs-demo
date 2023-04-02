@@ -35,8 +35,8 @@ export default function LogoParticles() {
   return (
     <ParticleImage
       src={"/logo.png"}
-      width={Number(width ?? 800)}
-      height={Number(height ?? 600)}
+      width={Number(width ?? 400)}
+      height={Number(height ?? 300)}
       scale={1}
       maxParticles={1200}
       particleOptions={particleOptions}

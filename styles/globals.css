@@ -18,11 +18,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer components {
   :is(a, button, input, textarea, select, details, summary):focus-visible {
-    outline: theme("colors.current") dotted 0.188rem;
+    outline: theme('colors.current') dotted 0.188rem;
     outline-offset: 0.188rem;
   }
 
@@ -61,7 +59,7 @@
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {
-  content: "";
+  content: '';
 }
 
 .js .loading::before {
@@ -94,7 +92,7 @@
 }
 #percent {
   color: white;
-  font-family: "Neutral Face";
+  font-family: 'Neutral Face';
 }
 #bar {
   width: 60%;
@@ -182,7 +180,7 @@ main {
 }
 
 .frame a:not(.frame__title-back)::before {
-  content: "";
+  content: '';
   height: 1px;
   width: 100%;
   background: currentColor;
@@ -248,7 +246,7 @@ main {
   align-items: center;
   height: 100vh;
   position: relative;
-  font-family: "Cabin", sans-serif;
+  font-family: 'Cabin', sans-serif;
   text-transform: uppercase;
   font-size: 7vmin;
   padding-left: 10%;
@@ -289,13 +287,13 @@ dd {
 }
 
 .effects button::before {
-  content: "[";
+  content: '[';
   margin-right: 0.5rem;
   display: inline-block;
 }
 
 .effects button::after {
-  content: "]";
+  content: ']';
   margin-left: 0.5rem;
   display: inline-block;
 }
@@ -313,16 +311,16 @@ dd {
     display: grid;
     grid-template-columns: auto auto 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "title prev sponsor";
+    grid-template-areas: 'title prev sponsor';
   }
 }
 
 @font-face {
-  font-family: "Venera";
+  font-family: 'Venera';
   font-style: normal;
   font-weight: 900;
-  src: local("Unbounded"),
-    url(../assets/fonts/Venera-900.ttf) format("truetype");
+  src: local('Unbounded'),
+    url(../assets/fonts/Venera-900.ttf) format('truetype');
 }
 
 /* @media (prefers-color-scheme: light) {

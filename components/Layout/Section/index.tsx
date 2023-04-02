@@ -11,13 +11,13 @@ const Section = ({ children, ...props }: CustomPropsWithChildren) => {
   const { bg, ...rest } = props;
   return (
     <section
-      className={`w-full overflow-x-hidden dark:bg-black ${
+      className={`w-full h-full overflow-x-hidden dark:bg-black ${
         bg ? bg : "bg-secondary-orange"
       }`}
       {...rest}
     >
       <div className="h-screen w-screen">
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full h-full flex items-center justify-center">
           <Container>{children}</Container>
         </div>
       </div>

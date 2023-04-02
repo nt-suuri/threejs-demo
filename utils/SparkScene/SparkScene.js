@@ -21,7 +21,7 @@ export default function SparkScene() {
   const [fov, setFov] = useState(60);
 
   useEffect(() => {
-    setInterval(() => setFov(40), 2000);
+    setInterval(() => setFov(60), 2000);
   });
 
   return (

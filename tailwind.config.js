@@ -25,6 +25,9 @@ module.exports = {
       "secondary-orange": "#FFA727",
       ...colors,
     },
+    animation: {
+      tick: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;',
+    }
   },
   plugins: [
     function ({ addVariant }) {
