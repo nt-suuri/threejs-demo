@@ -18,7 +18,7 @@ export default function Box(props: ThreeElements['mesh']) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <dodecahedronGeometry args={[2, 2]} />
-      <meshStandardMaterial wireframe color={hovered ? '#FFA727' : '#FF6900'} />
+      <meshStandardMaterial wireframe color={hovered ? '#FF6900' : '#0073FF'} />
     </mesh>
   )
 }

@@ -5,7 +5,7 @@ import { DivInview } from "../../../Animations/DivInView";
 
 const Intro = () => {
   return (
-    <div className="h-full w-full p-5 text-zinc-800 dark:text-white">
+    <div className="h-full w-full p-5 text-zinc-100 dark:text-white">
       <DivInview>
         {/* todo: spark storm animation (infinite). see more: https://varun.ca/three-js-particles/ */}
         <div className="w-full flex items-center justify-center">
@@ -43,7 +43,7 @@ const Intro = () => {
                   To make technology as accessible as possible for every people
                 </dt>
               </dl>
-              <div className="border-b border-black dark:border-white mt-5"></div>
+              <div className="border-b border-white mt-5"></div>
               <div className="w-full flex justify-between mt-3">
                 <div className="flex">
                   <NextIcon className="w-5 h-5 rotate-180" />
